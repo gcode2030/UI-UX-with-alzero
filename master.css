@@ -2,7 +2,7 @@
 :root{
     --blue-color:#0075ff;
     --blue-alt-color:#0d69d5;
-    --orange-color:#22c55e;
+    --green-color:#118039;
     --red-color:#f44336;
     --grey-color:#888;
     --orange-color:hsl(38, 92%, 50%);
@@ -21,6 +21,7 @@ body{
 }
 a{
     text-decoration: none;
+  
 }
 ul{
     list-style: none;
@@ -84,7 +85,7 @@ border: 4px solid rgb(255, 255, 255);
     background-color: #d4cdcd;
 }
 .sidebar ul li a span{
-    font-size: 14px;
+    font-size: 19px;
     margin-left: 10px;
 
 }
@@ -158,8 +159,8 @@ border: 4px solid rgb(255, 255, 255);
     top: -5px;
    }
    .head .icons img{
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     margin-left: 15px;
    
     
@@ -187,6 +188,7 @@ border: 4px solid rgb(255, 255, 255);
     grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 20px;
  }
 
  @media (max-width:767px) {
@@ -199,6 +201,236 @@ border: 4px solid rgb(255, 255, 255);
  }
 }
       /* end content */
+
+.welcome{
+    overflow: hidden;
+
+}
+.welcome .avatar{
+    width: 64px;
+    height: 64px;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 0 0 5px #ddd;
+    margin-left: 20px;
+    margin-bottom: -32px;
+
+
+}
+.welcome .body{
+border-top: 1px solid #eee;
+border-bottom: 1px solid #eee;
+
+}
+
+.welcome .body >div {
+    flex: 1;
+}
+
+.welcome .visit{
+    margin: 0 15px 15px auto;
+    transition: 0.3s;
+}
+.welcome .visit:hover{
+   background-color:var(--blue-alt-color);
+}
+
+@media (max-width: 767px) {
+    .welcome .intro{
+        padding-bottom: 30px;
+    }
+    .welcome .avatar{
+        margin-left:0;
+    }
+    .welcome .body >div:not(:lest-child) {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* <!-- start quick-drft --> */
+
+.quick-draft textarea{
+    resize: none;
+    min-height: 180px;
+}
+
+.quick-draft .save{
+  margin-left: auto ;
+  transform: 0.3s;
+  cursor: pointer;
+}
+
+.quick-draft .save:hover{
+background-color:var(--blue-alt-color);
+}
+
+
+
+
+
+/* <!-- and quick-drft --> */
+
+
+/* start targets --> */
+.targets .target-row .icon{
+width: 80px;
+height: 80px;
+margin-right:15px ;
+color: #1e5fa8;
+}
+.targets .datails{    
+flex: 1;
+}
+.targets .datails .progress{    
+height: 4px;
+
+}
+.targets .datails .progress > span{    
+position: absolute;
+height: 4px;
+width: 20%;
+
+
+}
+.targets .datails .progress > span span{    
+position: absolute;
+bottom: 16px;
+right: -16px;
+color: white;
+padding: 2px 5px;
+border-radius: 6px;
+font-size: 13px;
+}
+.targets .datails .progress > span span::after{    
+content: '';
+border-color: transparent;
+border-width: 5px;
+border-style: solid;
+position: absolute;
+bottom: -10px;
+
+left: 50%;
+transform: translateX(-50%);
+}
+.targets .datails .progress > .blue span::after{
+border-top-color: var(--blue-color);
+}
+.targets .datails .progress > .orange span::after{
+border-top-color: var(--orange-color);
+}
+.targets .datails .progress > .green span::after{
+border-top-color: var(--green-color);
+}
+.blue .icon,
+.blue .progress{
+    background-color: rgba(0 117 255/ 20%);
+}
+.orange .icon,
+.orange .progress{
+    background-color: rgb(245 158 11/ 20%);
+}
+.green .icon,
+.green .progress{
+    background-color: rgb(34 197 94/ 20%);
+}
+/* end targets --> */
+/* start tickets */
+.tickets .box{
+border: 1px solid #ccc;
+width: calc(50% - 10px);
+
+}
+
+@media (max-width:767px) {
+ 
+    .tickets .box{
+        width: 100%;
+    }
+}
+
+/* end tickets */
+/* start latest news */
+.latest-news .news-row:not(:last-of-type){
+ margin-bottom: 20px;
+ padding-bottom: 20px;
+ border-bottom: 1px solid #eee;
+}
+.latest-news .news-row img{
+    width: 60px;
+    border-radius: 9px;
+    margin-right: 15px;
+}
+.latest-news .info{
+ flex-grow:1;
+}
+.latest-news .info h3{
+margin: 0 0 6px;
+font-size: 16px;
+}
+@media (max-width:767px) {
+.latest-news .news-row{
+        display: block;
+         
+    }
+.latest-news .news-row .label{
+      margin: 10px auto;  
+      width: fit-content;     
+         
+    }
+    
+}
+/* end latest news */
+
+/* start tasks */
+
+.tasks .task-row:not(:last-of-type){
+
+    margin-bottom: 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #eee;
+}
+.tasks .info{
+    flex-grow: 1;
+} 
+.tasks .done{
+    opacity: 0.3;
+}
+.tasks .done h3,
+.tasks .done p {
+    text-decoration: line-through;
+}
+.tasks .delete{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.tasks .delete:hover{
+    color: var(--red-color);
+}
+
+
+
+
+
+
+
+
+/* end tasks */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
